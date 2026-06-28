@@ -85,7 +85,7 @@ input,select,textarea{font-family:inherit;}
 .pcard{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;transition:box-shadow .2s;}
 .pcard:hover{box-shadow:0 6px 20px rgba(0,0,0,0.1);}
 .pcard.is-out{opacity:0.72;}
-.pcard .imgwrap{position:relative;background:linear-gradient(135deg,#f0f0ff,#fff8e0);height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:12px 12px 0 0;}
+.pcard .imgwrap{position:relative;background:linear-gradient(135deg,#fff8e0,#fff5f0);height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:12px 12px 0 0;}
 .pcard .imgwrap i{font-size:48px;color:var(--navy);opacity:.15;}
 .pcard .out-overlay{position:absolute;inset:0;background:rgba(20,10,10,0.45);display:flex;align-items:center;justify-content:center;z-index:2;}
 .pcard .out-ribbon{background:var(--red);color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;padding:5px 14px;border-radius:6px;transform:rotate(-8deg);box-shadow:0 3px 10px rgba(0,0,0,0.35);text-transform:uppercase;}
@@ -1203,13 +1203,8 @@ tr:hover td{background:#fafaff;}
   gap: 8px;
 }
 
-/* Product card — image இல்லன்னா icon காட்டாதே, dark gradient மட்டும் */
-.pcard .imgwrap > i { display: none !important; }
-.pcard .imgwrap:not(:has(img)) {
-  background: linear-gradient(135deg, #1d1f4d 0%, #2d1a6e 60%, #1a0a40 100%);
-}
 
-/* Product card — no imgwrap, badges inline */
-.pcard { border-radius: 12px; overflow: hidden; }
-.pcard .off { position: static !important; display: inline-block; }
-.pcard .stk { position: static !important; display: inline-block; }
+
+
+/* imgwrap — hide icon, keep original bg */
+.pcard .imgwrap > i { display: none !important; }
