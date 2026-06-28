@@ -193,9 +193,10 @@ export default function UserDashboard({ user=null, onLogout, showToast }) {
           </div>
           <div className="search-wrap">
             <div className="search-inner">
-              <i className="ti ti-search search-prefix-icon"/>
+              <span className="search-prefix-icon" style={{fontSize:16,lineHeight:1}}>🔍</span>
               <input value={search} onChange={e=>setSearch(e.target.value)}
                 onKeyDown={e=>e.key==='Enter'&&navTo('products')} placeholder="Search crackers..."/>
+              {search&&<button onClick={()=>setSearch('')} style={{background:'none',border:'none',cursor:'pointer',fontSize:16,color:'#999',padding:'0 4px',lineHeight:1}}>✕</button>}
             </div>
             <button onClick={()=>navTo('products')} className="search-go-btn">Search</button>
           </div>
@@ -242,19 +243,7 @@ export default function UserDashboard({ user=null, onLogout, showToast }) {
           ))}
         </nav>
 
-        {/* ── DESKTOP: Category sub-nav (shows only when section === products) ── */}
-        {section==='products'&&(
-          <div className="user-desktop-nav" style={{background:'#fff',borderBottom:'1px solid var(--border)',padding:'10px 16px',display:'flex',gap:8,overflowX:'auto'}}>
-            {PRODUCT_CATS.map(c=>(
-              <button key={c} onClick={()=>setCat(c)} style={{
-                padding:'7px 16px',borderRadius:20,border:'none',cursor:'pointer',
-                background:cat===c?'var(--navy)':'#f0f0f8',
-                color:cat===c?'var(--gold)':'var(--navy)',
-                fontWeight:700,fontSize:12,whiteSpace:'nowrap',transition:'all .15s'
-              }}>{c}</button>
-            ))}
-          </div>
-        )}
+
 
         {/* ── MOBILE NAV BAR ── */}
         <div className="user-mobile-nav-bar" style={{visibility: cartOpen||notifOpen ? 'hidden' : 'visible'}}>
