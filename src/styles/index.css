@@ -1208,3 +1208,8 @@ tr:hover td{background:#fafaff;}
 .pcard .imgwrap:not(:has(img)) {
   background: linear-gradient(135deg, #1d1f4d 0%, #2d1a6e 60%, #1a0a40 100%);
 }
+
+/* Product card — no imgwrap, badges inline */
+.pcard { border-radius: 12px; overflow: hidden; }
+.pcard .off { position: static !important; display: inline-block; }
+.pcard .stk { position: static !important; display: inline-block; }

@@ -156,11 +156,9 @@ export default function UserDashboard({ user=null, onLogout, showToast }) {
     const isOut = p.stock===0;
     return (
       <div className={`pcard${isOut?' is-out':''}`}>
-        <div className="imgwrap">
-          {p.image&&<img src={p.image} alt={p.name} style={{width:'100%',height:'100%',objectFit:'cover',borderRadius:'12px 12px 0 0'}}/>}
-          {disc>0&&<div className="off">{disc}% OFF</div>}
-          <div className={`stk ${sc}`}>{sl}</div>
-          {isOut&&<div className="out-overlay"><span className="out-ribbon">Out of Stock</span></div>}
+        <div style={{display:'flex',gap:6,flexWrap:'wrap',padding:'8px 10px 0'}}>
+          {disc>0&&<span className="off" style={{position:'static',fontSize:11,padding:'2px 8px',borderRadius:5}}>{disc}% OFF</span>}
+          <span className={"stk "+sc} style={{position:'static',fontSize:11,padding:'2px 8px',borderRadius:5}}>{sl}</span>
         </div>
         <div className="body">
           <div className="pname">{p.name}</div>
